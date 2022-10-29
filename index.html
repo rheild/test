@@ -1,4 +1,4 @@
-
+<!-- to host your own mirror, see line 361 -->
 <?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -315,8 +315,6 @@
         </style>
     </head>
     <body>
-
-
         <div id="container">
         <div id="search-bar">
         <input id="text-input" type="text" value="" placeholder="" />
@@ -360,7 +358,17 @@
 
             // load api key
             gapi.load("client", () => {
-                gapi.client.setApiKey("AIzaSyDet2ArwSfWgrlZupgUJt8TeyCZ1YRh-i4");
+                /* 
+                If you would like to host your own mirror, simply replace the below key with your own Google API key.
+                
+                To make it, create a new project in Google Cloud (use your personal email),
+                then go to credentials with the navbar at the side,
+                at the top, click Create Credentials -> API key,
+                then configure it accordingly.
+                
+                Be sure to allow your API key to access the YT API.
+                */
+                gapi.client.setApiKey("AIzaSyDet2ArwSfWgrlZupgUJt8TeyCZ1YRh-i4"); // replace 'AIzaSy...1YRh-i4' with your API key
                 gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
                     .then(() => console.log("GAPI client loaded for API"), (err) => {
                         console.warn("Failed to load GAPI", err);
